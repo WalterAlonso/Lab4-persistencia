@@ -12,10 +12,16 @@
 
 package com.losalpes.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Clase que representa la información de un mueble en el sistema
  * 
  */
+
+@Entity
 public class Mueble
 {
 
@@ -26,16 +32,19 @@ public class Mueble
     /**
      * Referencia que identifica el modelo del mueble en el sistema.
      */
+    @Id
     private long referencia;
 
     /**
      * Nombre del mueble.
      */
+    @Column(nullable = false)
     private String nombre;
 
     /**
      * Descripción del mueble.
      */
+    @Column(nullable = true)
     private String descripcion;
 
     /**
@@ -46,21 +55,24 @@ public class Mueble
     /**
      * Precio del mueble
      */
+    @Column(nullable = false)
     private double precio;
 
     /**
      * Nombre de la imágen
      */
+    @Column(nullable = true)
     private String imagen;
 
     /**
      * Cantidad de items
      */
+    @Column(nullable = false)
     private int cantidad;
 
     /**
      * Indica si el mueble fue seleccionado
-     */
+     */    
     private boolean seleccion;
 
     //-----------------------------------------------------------

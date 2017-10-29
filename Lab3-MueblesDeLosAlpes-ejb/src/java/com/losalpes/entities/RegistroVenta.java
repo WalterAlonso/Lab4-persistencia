@@ -12,27 +12,41 @@
 
 package com.losalpes.entities;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  * Clase que modela un registro de venta realizado por un cliente
  * 
  */
-public class RegistroVenta
+@Entity
+@IdClass(RegistroVentaPK.class)
+public class RegistroVenta implements Serializable 
 {
-
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
     
     /**
      * Fecha en la que se vendió el producto
-     */
+     */  
+    @Id
     private Date fechaVenta;
-
+  
     /**
      * Producto vendido
-     */
+     */    
+    @Id
+    @OneToOne()    
+    @JoinColumn(name="idMueble",referencedColumnName="referencia")     
     private Mueble producto;
 
     /**
@@ -48,8 +62,13 @@ public class RegistroVenta
     /**
      * Usuario que compró el producto
      */
+    //@JoinColumn(name="IdUsuario",referencedColumnName="login")
+    @Id
+    @OneToOne()    
+    @JoinColumn(name="IdUsuario",referencedColumnName="login")
     private Usuario comprador;
-
+    
+    
     //-----------------------------------------------------------
     // Constructor
     //-----------------------------------------------------------

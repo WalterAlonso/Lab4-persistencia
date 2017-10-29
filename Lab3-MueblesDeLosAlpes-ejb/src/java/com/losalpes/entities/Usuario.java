@@ -13,11 +13,17 @@
 package com.losalpes.entities;
 
 import java.util.ArrayList;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Clase que representa un usuario del sistema
  * 
  */
+@Entity
 public class Usuario
 {
 
@@ -28,6 +34,7 @@ public class Usuario
     /**
      * Nombre del usuario
      */
+    @Id
     private String login;
 
     /**
@@ -93,6 +100,8 @@ public class Usuario
     /**
      * Devuelve un lista con todos las compras del usuario
      */
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "comprador", fetch = FetchType.EAGER)
     private ArrayList<RegistroVenta>compras;
 
     //-----------------------------------------------------------
