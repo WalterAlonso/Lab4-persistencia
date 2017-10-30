@@ -53,13 +53,13 @@ public class Usuario {
     /**
      * Nombres y apellidos del usuario
      */
-    @Column(nullable = false, length = 200)
+    @Column(nullable = true, length = 200)
     private String nombreCompleto;
 
     /**
      * Número de documento de identidad
      */
-    @Column(nullable = false, length = 15, unique = true)
+    @Column(nullable = true, length = 15, unique = true)
     private long documento;
 
     /**
@@ -71,13 +71,13 @@ public class Usuario {
     /**
      * Número del teléfono local
      */
-    @Column(nullable = false, length = 15)
+    @Column(nullable = true, length = 15)
     private long telefonoLocal;
 
     /*
      * Número del teléfono celular
      */
-    @Column(nullable = false, length = 15)
+    @Column(nullable = true, length = 15)
     private long telefonoCelular;
 
     /**
@@ -89,7 +89,7 @@ public class Usuario {
     /**
      * Dirección de residencia del usuario
      */
-    @Column(nullable = false, length = 100)
+    @Column(nullable = true, length = 100)
     private String direccion;
 
     /**
@@ -101,7 +101,7 @@ public class Usuario {
     /**
      * Correo electrónico del usuario
      */
-    @Column(nullable = false, length = 40)
+    @Column(nullable = true, length = 40)
     private String correo;
 
     /**

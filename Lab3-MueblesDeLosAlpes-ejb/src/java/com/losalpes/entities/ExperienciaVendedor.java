@@ -12,10 +12,15 @@
 
 package com.losalpes.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Clase que modela un ìtem de experiencia de vendedor.
  * 
  */
+@Entity
 public class ExperienciaVendedor
 {
 
@@ -26,26 +31,31 @@ public class ExperienciaVendedor
     /**
      * Identificador del item de experiencia.
      */
+    @Id
     private long id;
 
     /**
      * Nombre de la empresa que ceritifica la experiencia laboral.
      */
+    @Column
     private String nombreEmpesa;
 
     /**
      * Cargo que el empleado ocupó en la empresa.
      */
+    @Column
     private String cargo;
 
     /**
      * Descripción de las funciones del cargo.
      */
+    @Column
     private String descripcion;
 
     /**
      * Año de terminación del vínculo laboral.
      */
+    @Column
     private int ano;
 
     //-----------------------------------------------------------
