@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+    Document   : registro
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/main-template.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="titulo" value="¨Paises" />
+    <ui:define name="body">
+        <h:form>
+            Paises
+            <!--<p:accordionPanel>
+                <p:tab title="Registro de usuario">
+                    <div class="ui-grid ui-grid-responsive">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-6">
+                                <p:outputLabel for="TxtName" value="Nombre" style="font-weight: bold" />
+                                <p:inputText value="#{paisBean.pais.nombre}" required="true"
+                                             id="TxtID">
+                                    <f:validateLength minimum="5" />
+                                </p:inputText> 
+                                <p:message for="TxtID" display="text" />
+                            </div>
+                        </div>
+                    </div>
+                </p:tab>
+            </p:accordionPanel>-->
+
+            <h:commandButton value="Aceptar" action="#{paisBean.crearPais}"/>
+        </h:form>
+
+        <h:form>
+            <h:panelGroup>
+
+                <!-- Se crea una tabla donde se presentan los muebles del sistema -->
+                <p:dataTable id="data" value="#{paisBean.paises}" var="file"
+                             paginator="true" rows="5" scrollable="true" scrollHeight="200" scrollWidth="50%" frozenColumns="2"
+                             >
+                    <p:column>
+                        <f:facet name="header">
+                            Nombre
+                        </f:facet>
+                        <h:outputText value="#{file.nombre}"/>
+                    </p:column>
+                                 
+                    <p:column style="width: 30px">
+                        <f:facet name="header">
+                            <h:outputText
+                                value="Eliminar"
+                                style="color:white"/>
+                        </f:facet>
+                        <h:panelGroup style="background-color: transparent">
+
+                            <h:commandLink id="DDRtn"
+                                           actionListener="#{paisBean.eliminar}"
+                                           value="Eliminar">
+                                <f:param name="paisId" value="#{file.pais}" />
+
+                            </h:commandLink>
+                        </h:panelGroup>
+                    </p:column>
+                </p:dataTable>
+            </h:panelGroup>    
+        </h:form>
+
+    </ui:define>
+</ui:composition>

@@ -1,6 +1,6 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * $Id$ IServicioSeguridadLocal.java
+ * $Id$ IServicioSeguridadRemote.java
  * Universidad de los Andes (Bogotá - Colombia)
  * Departamento de Ingeniería de Sistemas y Computación
  * Licenciado bajo el esquema Academic Free License version 3.0
@@ -30,4 +30,5 @@ public interface IServicioSeguridadMockLocal
      */
     public Usuario ingresar(String nombre, String contraseña)throws AutenticacionException;
 
+    
 }

@@ -28,6 +28,13 @@
         <managed-bean-class>com.losalpes.beans.RegistroBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    
+    <managed-bean>
+        <description>ManagedBean encargado de la creación de paises en el sistema</description>
+        <managed-bean-name>paisBean</managed-bean-name>
+        <managed-bean-class>com.losalpes.beans.PaisBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
  
     <managed-bean>
         <description>Managed Bean encargado del carrito de compras del cliente</description>

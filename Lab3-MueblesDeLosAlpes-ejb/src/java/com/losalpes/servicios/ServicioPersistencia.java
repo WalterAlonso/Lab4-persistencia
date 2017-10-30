@@ -10,8 +10,7 @@
  */
 package com.losalpes.servicios;
 
-import com.losalpes.entities.Mueble;
-import com.losalpes.entities.Pais;
+import com.losalpes.entities.Usuario;
 import com.losalpes.excepciones.OperacionInvalidaException;
 import java.io.Serializable;
 import java.util.List;
@@ -56,13 +55,15 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
      */
     @Override
     public void create(Object obj) throws OperacionInvalidaException {
-        //TODO
-        if (obj instanceof Pais) {
-            Pais pais = (Pais) obj;
-            this.em.persist(pais);
-        } else if (obj instanceof Mueble) {
-            Mueble m = (Mueble) obj;
-            this.em.persist(m);
+        if (obj instanceof Usuario) {
+            Usuario m = (Usuario) obj;
+            try {
+                this.em.persist(m);
+            } catch (Exception e) {
+                System.err.println(e.getCause());
+                System.err.println(e.getMessage());
+            }
+
         }
 
     }
@@ -100,8 +101,8 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
      */
     @Override
     public List findAll(Class c) {
-        return null;
-        //return entityManager.createQuery("select O from " + c.getSimpleName() + " as O").getResultList();
+        
+        return em.createQuery("select * from " + c.getSimpleName() + ";").getResultList();
     }
 
     /**
@@ -114,7 +115,6 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
      */
     @Override
     public Object findById(Class c, Object id) {
-        //TODO
-        return null;
+        return em.find(c, id);
     }
 }

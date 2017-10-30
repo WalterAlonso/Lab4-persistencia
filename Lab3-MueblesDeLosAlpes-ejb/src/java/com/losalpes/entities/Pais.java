@@ -6,7 +6,7 @@
  * Licenciado bajo el esquema Academic Free License version 3.0
  *
  * Ejercicio: Muebles de los Alpes
- * 
+ *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 package com.losalpes.entities;
@@ -20,22 +20,21 @@ import javax.persistence.OneToMany;
 
 /**
  * Clase que representa un país en el sistema
- * 
+ *
  */
 @Entity
-public class Pais
-{
+public class Pais {
 
     //-----------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------
-    
-    
     /**
      * Id del país
      */
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
+
     
     /**
      * Nombre del país
@@ -45,28 +44,26 @@ public class Pais
     /**
      * Ciudades que tiene el país
      */
-    @OneToMany(mappedBy="pais")
+    @OneToMany(mappedBy = "pais")
     private List<Ciudad> ciudades;
 
     //-----------------------------------------------------------
     // Constructores
     //-----------------------------------------------------------
-
     /**
      * Constructor de la clase (sin argumentos)
      */
-    public Pais()
-    {
+    public Pais() {
 
     }
 
     /**
      * Constructor de la clase (con argumentos)
+     *
      * @param nombre Nombre del país
      * @param ciudades Lista con las ciudades del país
      */
-    public Pais(String nombre, List<Ciudad> ciudades)
-    {
+    public Pais(String nombre, List<Ciudad> ciudades) {
         this.nombre = nombre;
         this.ciudades = ciudades;
     }
@@ -74,41 +71,48 @@ public class Pais
     //-----------------------------------------------------------
     // Getters y setters
     //-----------------------------------------------------------
-
     /**
      * Devuele el nombre del país
+     *
      * @return nombre Nombre del país
      */
-    public String getNombre()
-    {
+    public String getNombre() {
         return nombre;
     }
 
     /**
      * Modifica el nombre del país
+     *
      * @param nombre Nuevo nombre
      */
-    public void setNombre(String nombre)
-    {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
      * Devuelve todas las ciudades del país
+     *
      * @return ciudades Ciudades del país
      */
-    public List<Ciudad> getCiudades()
-    {
+    public List<Ciudad> getCiudades() {
         return ciudades;
     }
 
     /**
      * Modifica las ciudades del país
+     *
      * @param ciudades Nuevas ciudades
      */
-    public void setCiudades(List<Ciudad> ciudades)
-    {
+    public void setCiudades(List<Ciudad> ciudades) {
         this.ciudades = ciudades;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

@@ -40,7 +40,7 @@ public class Ciudad {
     @Column(nullable = false)
     private String nombre;
 
-    @OneToOne
+    @ManyToOne
     private Pais pais;
 
     /**
@@ -83,4 +83,21 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
+    }
+
+    
 }
