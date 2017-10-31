@@ -25,7 +25,7 @@ import javax.ejb.Stateless;
  *
  */
 @Stateless
-public class ServicioPaisesMock implements IServicioPaisesMockLocal {
+public class ServicioPaisesMock implements IServicioPaisesMockLocal, IServicioPaisesMockRemote {
 
     //-----------------------------------------------------------
     // Atributos
@@ -43,7 +43,6 @@ public class ServicioPaisesMock implements IServicioPaisesMockLocal {
      * Constructor de la clase sin argumentos
      */
     public ServicioPaisesMock() {
-        persistencia = new ServicioPersistencia();
     }
 
     //-----------------------------------------------------------
@@ -67,7 +66,7 @@ public class ServicioPaisesMock implements IServicioPaisesMockLocal {
     }
     
     @Override
-    public void eliminarPais(String pais) throws OperacionInvalidaException {
+    public void eliminarPais(Long pais) throws OperacionInvalidaException {
         try {
             Pais p = (Pais) persistencia.findById(Pais.class, pais);
             persistencia.delete(p);

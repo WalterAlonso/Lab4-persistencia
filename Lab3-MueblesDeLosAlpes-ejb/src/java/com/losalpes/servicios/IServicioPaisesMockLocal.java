@@ -15,11 +15,13 @@ package com.losalpes.servicios;
 import com.losalpes.entities.Pais;
 import com.losalpes.excepciones.OperacionInvalidaException;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  * Contrato funcional de los servicios de autenticación en el sistema
  * 
  */
+@Local
 public interface IServicioPaisesMockLocal
 {
 
@@ -27,6 +29,6 @@ public interface IServicioPaisesMockLocal
     
     public void crearPais(Pais pais);
     
-    public void eliminarPais(String pais) throws OperacionInvalidaException ;
+    public void eliminarPais(Long pais) throws OperacionInvalidaException ;
 
 }

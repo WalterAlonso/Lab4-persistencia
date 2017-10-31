@@ -9,6 +9,7 @@ import com.losalpes.entities.Pais;
 import com.losalpes.excepciones.OperacionInvalidaException;
 import com.losalpes.servicios.IServicioPaisesMockLocal;
 import com.losalpes.servicios.ServicioPaisesMock;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,10 +23,10 @@ import javax.faces.event.ActionEvent;
  *
  * @author Juan Paz
  */
-public class PaisBean {
-
+public class PaisBean implements Serializable {
+ 
     @EJB
-    private ServicioPaisesMock paisServices;
+    private IServicioPaisesMockLocal paisServices;
 
     private List<Pais> paises;
 
@@ -35,12 +36,12 @@ public class PaisBean {
      * Creates a new instance of PaisBean
      */
     public PaisBean() {
-        paisServices = new ServicioPaisesMock();
+        //paisServices = new ServicioPaisesMock();
         paises = new ArrayList<Pais>();
-        paises = paisServices.getPaises();
     }
 
     public List<Pais> getPaises() {
+        paises = paisServices.getPaises();
         return paises;
     }
 
@@ -65,7 +66,7 @@ public class PaisBean {
         try {
             FacesContext context = FacesContext.getCurrentInstance();
             Map map = context.getExternalContext().getRequestParameterMap();
-            String paisId = (String) map.get("paisId");
+            Long paisId = Long.parseLong((String)map.get("paisId"));
 
             paisServices.eliminarPais(paisId);
 
