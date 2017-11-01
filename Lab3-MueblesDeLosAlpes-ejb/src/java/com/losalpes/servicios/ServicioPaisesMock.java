@@ -50,6 +50,10 @@ public class ServicioPaisesMock implements IServicioPaisesMockLocal, IServicioPa
     //-----------------------------------------------------------
     @Override
     public List<Pais> getPaises() {
+        
+        //List<Object[]> test = persistencia.findByQuery("");
+        //String h= "";
+        
         return persistencia.findAll(Pais.class);
     }
 

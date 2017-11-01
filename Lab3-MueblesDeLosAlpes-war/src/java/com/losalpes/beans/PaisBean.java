@@ -42,6 +42,7 @@ public class PaisBean implements Serializable {
 
     public List<Pais> getPaises() {
         paises = paisServices.getPaises();
+        
         return paises;
     }
 

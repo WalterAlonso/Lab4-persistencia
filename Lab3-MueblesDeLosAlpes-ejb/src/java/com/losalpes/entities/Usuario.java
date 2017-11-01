@@ -53,13 +53,13 @@ public class Usuario {
     /**
      * Nombres y apellidos del usuario
      */
-    @Column(nullable = true, length = 200)
+    @Column(nullable = false, length = 200)
     private String nombreCompleto;
 
     /**
      * Número de documento de identidad
      */
-    @Column(nullable = true, length = 15, unique = true)
+    @Column(nullable = false, length = 15, unique = true)
     private long documento;
 
     /**
@@ -71,13 +71,13 @@ public class Usuario {
     /**
      * Número del teléfono local
      */
-    @Column(nullable = true, length = 15)
+    @Column(nullable = false, length = 15)
     private long telefonoLocal;
 
     /*
      * Número del teléfono celular
      */
-    @Column(nullable = true, length = 15)
+    @Column(nullable = false, length = 15)
     private long telefonoCelular;
 
     /**
@@ -89,7 +89,7 @@ public class Usuario {
     /**
      * Dirección de residencia del usuario
      */
-    @Column(nullable = true, length = 100)
+    @Column(nullable = false, length = 100)
     private String direccion;
 
     /**
@@ -101,7 +101,7 @@ public class Usuario {
     /**
      * Correo electrónico del usuario
      */
-    @Column(nullable = true, length = 40)
+    @Column(nullable = false, length = 40)
     private String correo;
 
     /**
@@ -137,6 +137,29 @@ public class Usuario {
         this.contraseña = contraseña;
         this.tipoUsuario = tipoUsuario;
         this.compras = new ArrayList<RegistroVenta>();
+    }
+    
+    /**
+     * Constructor de la clase con argumentos
+     *
+     * @param nombre Nombre del usuario
+     * @param contraseña Constraseña del usuario
+     * @param tipo Tipo de usuario
+     */
+    public Usuario(String login, String contraseña, TipoUsuario tipoUsuario, String nombreCompleto, long documento, TipoDocumento tipoDocumento, long telefonoLocal, long telefonoCelular, Ciudad ciudad, String direccion, Profesion profesion, String correo) {
+        this.login = login;
+        this.contraseña = contraseña;
+        this.tipoUsuario = tipoUsuario;
+        this.nombreCompleto = nombreCompleto;
+        this.documento = documento;
+        this.tipoDocumento = tipoDocumento;
+        this.telefonoLocal = telefonoLocal;
+        this.telefonoCelular = telefonoCelular;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+        this.profesion = profesion;
+        this.correo = correo;
+        this.compras = new ArrayList<RegistroVenta>();        
     }
 
     //-----------------------------------------------------------

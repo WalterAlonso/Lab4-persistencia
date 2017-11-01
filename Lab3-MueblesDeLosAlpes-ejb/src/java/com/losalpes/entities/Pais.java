@@ -11,12 +11,14 @@
  */
 package com.losalpes.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 /**
@@ -45,8 +47,12 @@ public class Pais {
     /**
      * Ciudades que tiene el país
      */
+    //Bidireccional mapping
     @OneToMany(mappedBy = "pais", cascade = CascadeType.ALL)
-    private List<Ciudad> ciudades;
+    //Unidirectional mapping
+    //@OneToMany(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "PAIS_ID")
+    private List<Ciudad> ciudades =  new ArrayList<>();
 
     //-----------------------------------------------------------
     // Constructores
