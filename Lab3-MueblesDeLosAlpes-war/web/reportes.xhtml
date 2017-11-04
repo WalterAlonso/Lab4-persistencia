@@ -36,9 +36,8 @@
                                          <p:outputLabel value="Seleccione el país:" style="font-weight: bold" />
                                         <h:selectOneMenu value="#{reporteBean.pais}" label="Pais">
                                             <f:selectItems value="#{paisBean.paises}" 
-                                                           var="pais" itemValue="#{pais.id}" itemLabel="#{pais.nombre}"  />
-                                           <!--<f:ajax event="change" execute="@this" listener="#{reporteBean.getClientesTop(event)}" render="dataListTopClientes"/>                                                -->
-                                            <p:ajax update=":formTopClientes:e:formTableTopClientes:tableTopClientes"  listener="#{reporteBean.getClientesTop}"/>
+                                                           var="pais" itemValue="#{pais.id}" itemLabel="#{pais.nombre}"  />                                           
+                                            <p:ajax update=":formTopClientes:e:formTableTopClientes:tableTopClientes"  listener="#{reporteBean.getClientesTop(event)}"/>
                                         </h:selectOneMenu>
                                     </h:panelGrid>                               
                                 </div>                                
@@ -51,21 +50,19 @@
                                     value="#{reporteBean.getClientesTop(event)}"
                                     var="cliente"
                                     scrollable="false"
-                                    scrollHeight="100px"
-                                    paginator="true"
-                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                    scrollHeight="100px"                                    
                                     resizableColumns="true"
                                     rows="5">
-                                    <p:column headerText="Nombre" sortBy="#{cliente[0]}">
+                                    <p:column headerText="Nombre">
                                         <h:outputText value="#{cliente[0]}" />
                                     </p:column>
-                                    <p:column headerText="Login" sortBy="#{cliente[1]}">
+                                    <p:column headerText="Login" >
                                         <h:outputText value="#{cliente[1]}" />
                                     </p:column>
-                                    <p:column headerText="Compras: #" sortBy="#{cliente[2]}">
+                                    <p:column headerText="Compras: #" >
                                         <h:outputText value="#{cliente[2]}" />
                                     </p:column>
-                                    <p:column headerText="Dinero: $ #" sortBy="#{cliente[3]}">
+                                    <p:column headerText="Dinero: $ #" >
                                         <h:outputText value="#{cliente[3]}" />
                                     </p:column>
                                 </p:dataTable>

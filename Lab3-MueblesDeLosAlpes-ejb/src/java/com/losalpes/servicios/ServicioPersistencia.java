@@ -43,7 +43,14 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
         //crear ciudades
         List listPais = findAll(Pais.class);
         Ciudad bog = new Ciudad("Bogotá");
-        Ciudad ny = new Ciudad("New York");
+        Ciudad medellin = new Ciudad("Medellin");
+        Ciudad cartagena = new Ciudad("Cartagena");
+
+        Ciudad at = new Ciudad("Atlanta");
+        Ciudad ch = new Ciudad("Chicago");
+
+        Ciudad cam = new Ciudad("Cambridge");
+
         if (listPais.isEmpty()) {
 
             List list = findAll(Ciudad.class);
@@ -75,20 +82,17 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
                 Pais ing = new Pais("Inglaterra", array3);
                  */
 
-                //Bidirecctional mapping pais - ciudad (los dos lados deben sincronizar)
-                Ciudad cartagena = new Ciudad("Cartagena");
+                //Bidirecctional mapping pais - ciudad (los dos lados deben sincronizar)                
                 Pais colombia = new Pais("Colombia", new ArrayList<Ciudad>());
                 bog.setPais(colombia);
-                ny.setPais(colombia);
+                medellin.setPais(colombia);
                 cartagena.setPais(colombia);
                 colombia.getCiudades().add(bog);
-                colombia.getCiudades().add(ny);
+                colombia.getCiudades().add(medellin);
                 colombia.getCiudades().add(cartagena);
                 create(colombia);
 
                 Pais usa = new Pais("Estados Unidos", new ArrayList<Ciudad>());
-                Ciudad at = new Ciudad("Atlanta");
-                Ciudad ch = new Ciudad("Chicago");
                 Ciudad mi = new Ciudad("Miami");
                 at.setPais(usa);
                 ch.setPais(usa);
@@ -99,7 +103,6 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
                 create(usa);
 
                 Pais ing = new Pais("Inglaterra", new ArrayList<Ciudad>());
-                Ciudad cam = new Ciudad("Cambridge");
                 Ciudad can = new Ciudad("Canterbury");
                 Ciudad liv = new Ciudad("Liverpool");
                 cam.setPais(ing);
@@ -110,28 +113,96 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
                 ing.getCiudades().add(liv);
                 create(ing);
             }
-        }
 
-        Usuario usuario1 = new Usuario("client", "clientclient", TipoUsuario.Cliente, "client client", 1020102010, TipoDocumento.CC,
-                4300145, 314586587, bog, "DG 85", Profesion.Ingeniero, "client@ggg.com");
-        Usuario usuario2 = new Usuario("user2", "user_client", TipoUsuario.Cliente, "user client", 1020102013, TipoDocumento.CC,
-                4300145, 314586587, ny, "DG 85", Profesion.Ingeniero, "client_user@ggg.com");
-
-        //Inicializa el arreglo que contiene los usuarios
-        List listUsuarios = findAll(Usuario.class);
-        if (listUsuarios.isEmpty()) {
-            create(usuario1);
-            create(usuario2);
-            //TODO: no crea el admin????
+            Usuario usuario1 = new Usuario("client_Col", "clientclient", TipoUsuario.Cliente, "client client", 1020102010, TipoDocumento.CC,
+                    4300145, 314586587, bog, "DG 85", Profesion.Ingeniero, "client@ggg.com");
+            Usuario usuario2 = new Usuario("user2_Col", "user_client", TipoUsuario.Cliente, "user client", 1020102012, TipoDocumento.CC,
+                    4300145, 314586587, medellin, "DG 85", Profesion.Ingeniero, "client_user@ggg.com");
+            Usuario usuario3 = new Usuario("user3_Col", "user_client3", TipoUsuario.Cliente, "user client3", 1020102013, TipoDocumento.CC,
+                    4300143, 314586583, cartagena, "DG 853", Profesion.Ingeniero, "client_user3@ggg.com");
+            Usuario usuario4 = new Usuario("user4_Col", "user_client4", TipoUsuario.Cliente, "user client4", 1020102014, TipoDocumento.CC,
+                    4300144, 314586584, bog, "DG 854", Profesion.Ingeniero, "client_user4@ggg.com");
+            Usuario usuario5 = new Usuario("user5_Col", "user_client5", TipoUsuario.Cliente, "user client5", 1020102015, TipoDocumento.CC,
+                    4300144, 314586585, bog, "DG 855", Profesion.Ingeniero, "client_user5@ggg.com");
+            Usuario usuario6 = new Usuario("user6_Col", "user_client6", TipoUsuario.Cliente, "user client6", 1020102016, TipoDocumento.CC,
+                    4300144, 314586586, medellin, "DG 856", Profesion.Ingeniero, "client_user6@ggg.com");
+            
+            Usuario usuarioUsa1 = new Usuario("user1_Usa", "userUsa_client1", TipoUsuario.Cliente, "userUsa client1", 2020102011, TipoDocumento.CC,
+                    2300141, 314586581, at, "DG 851", Profesion.Ingeniero, "clientUsa_user1@ggg.com");
+            Usuario usuarioUsa2 = new Usuario("user2_Usa", "userUsa_client2", TipoUsuario.Cliente, "userUsa client2", 2020102012, TipoDocumento.CC,
+                    2300142, 314586582, at, "DG 852", Profesion.Ingeniero, "clientUsa_user2@ggg.com");
+            Usuario usuarioUsa3 = new Usuario("user3_Usa", "userUsa_client3", TipoUsuario.Cliente, "userUsa client3", 2020102013, TipoDocumento.CC,
+                    2300143, 314586583, at, "DG 853", Profesion.Ingeniero, "clientUsa_user3@ggg.com");
+            Usuario usuarioUsa4 = new Usuario("user4_Usa", "userUsa_client4", TipoUsuario.Cliente, "userUsa client4", 2020102014, TipoDocumento.CC,
+                    2300144, 314586584, at, "DG 854", Profesion.Ingeniero, "clientUsa_user4@ggg.com");
+            Usuario usuarioUsa5 = new Usuario("user5_Usa", "userUsa_client5", TipoUsuario.Cliente, "userUsa client5", 2020102015, TipoDocumento.CC,
+                    2300145, 314586585, at, "DG 855", Profesion.Ingeniero, "clientUsa_user5@ggg.com");
+            Usuario usuarioUsa6 = new Usuario("user6_Usa", "userUsa_client6", TipoUsuario.Cliente, "userUsa client6", 2020102016, TipoDocumento.CC,
+                    2300146, 314586586, ch, "DG 855", Profesion.Ingeniero, "clientUsa_user6@ggg.com");
+            
             Usuario admin = new Usuario("admin", "adminadmin", TipoUsuario.Administrador, "admin admin", 1020102011, TipoDocumento.CC,
                     4300145, 314586587, bog, "DG 85", Profesion.Ingeniero, "cliente@ggg.com");
-            create(admin);
+            //Inicializa el arreglo que contiene los usuarios
+            List listUsuarios = findAll(Usuario.class);
+            if (listUsuarios.isEmpty()) {
+                create(usuario1);
+                create(usuario2);
+                create(usuario3);
+                create(usuario4);
+                create(usuario5);
+                create(usuario6);
+                
+                create(usuarioUsa1);
+                create(usuarioUsa2);
+                create(usuarioUsa3);
+                create(usuarioUsa4);
+                create(usuarioUsa5);
+                create(usuarioUsa6);
+                
+                create(admin);
+            }
 
-            /*Usuario usuario2 = new Usuario("juanPaz", "juanPaz", TipoUsuario.Cliente);
-            usuario2.setNombreCompleto("Sebastian Paz");
-            create(usuario2);*/
+            ArrayList<Mueble> muebles = crearMuebles();
+            //Compradores colombianos
+            crearVentasAUsuario(usuario1, 10, bog, muebles);
+            crearVentasAUsuario(usuario2, 8, bog, muebles);
+            crearVentasAUsuario(usuario3, 6, bog, muebles);
+            crearVentasAUsuario(usuario4, 1, medellin, muebles);
+            crearVentasAUsuario(usuario5, 0, cartagena, muebles);
+            crearVentasAUsuario(usuario6, 0, medellin, muebles);
+            
+            //Compradores Usa
+            crearVentasAUsuario(usuarioUsa1, 5, ch, muebles);
+            crearVentasAUsuario(usuarioUsa2, 3, ch, muebles);
+            crearVentasAUsuario(usuarioUsa3, 1, at, muebles);
+            crearVentasAUsuario(usuarioUsa4, 1, at, muebles);
+            crearVentasAUsuario(usuarioUsa5, 2, at, muebles);
+            crearVentasAUsuario(usuarioUsa6, 3, ch, muebles);
         }
+    }
 
+    private void crearVentasAUsuario(Usuario usuario, int numeroVentas, Ciudad ciudad, ArrayList<Mueble> muebles) {
+        Random r = new Random();
+        for (int e = 0; e < numeroVentas; e++) {
+            //Genera un valor random para seleccionar el producto
+            int rndProducto = (int) (Math.random() * 8);
+            //Genera un valor random para seleccionar la cantidad 
+            int rndCantidad = (int) (Math.random() * 15) + 1;
+
+            RegistroVenta venta = new RegistroVenta();
+            venta.setCantidad(rndCantidad);
+            venta.setProducto(muebles.get(rndProducto));
+            //Genera un valor random para establecer una fecha
+            long ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 2 * 60 * 1000));
+            venta.setFechaVenta(new Date(ms));
+            //TODO: registro venta ciudad es entidad....!!!
+            venta.setCiudad(ciudad);
+            venta.setComprador(usuario);
+            create(venta);
+        }
+    }
+
+    private void crearVendedores() {
         List listVendedores = findAll(Vendedor.class);
 
         if (listVendedores.isEmpty()) {
@@ -158,72 +229,40 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
             experiencia4.add(ex4);
             Vendedor v3 = new Vendedor(4L, "Juan Pablo", "Escobar Vélez", experiencia4, 1000000, 100000, "Técnico en métodos de producción", "vendedor1");
             create(v3);
-
-            //muebles = new ArrayList<Mueble>();
-            //Agrega los muebles del sistema
-            ArrayList<Mueble> muebles = new ArrayList();
-            Mueble m1 = new Mueble(1L, "Silla clásica", "Una confortable silla con estilo del siglo XIX.", TipoMueble.Interior, 45, "sillaClasica", 123);
-            create(m1);
-            muebles.add(m1);
-            Mueble m2 = new Mueble(2L, "Sillón new wave", "Innovador y cómodo. No existen mejores palabras para describir este hermoso sillón.", TipoMueble.Interior, 60, "newWave", 5655);
-            create(m2);
-            muebles.add(m2);
-            Mueble m3 = new Mueble(3L, "Silla moderna", "Lo último en la moda de interiores. Esta silla le brindará la comodidad e innovación que busca", TipoMueble.Interior, 50, "sillaModerna", 5464);
-            create(m3);
-            muebles.add(m3);
-            Mueble m4 = new Mueble(4L, "Mesa de jardín", "Una bella mesa para comidas y reuniones al aire libre.", TipoMueble.Exterior, 100, "mesaJardin", 4568);
-            create(m4);
-            muebles.add(m4);
-            Mueble m5 = new Mueble(5L, "Orange games", "Una hermosa silla con un toqué moderno y elegante. Excelente para su sala de estar", TipoMueble.Interior, 70, "sillaNaranja", 1345);
-            create(m5);
-            muebles.add(m5);
-            Mueble m6 = new Mueble(6L, "Cama king", "Una hermosa cama hecha en cedro para dos personas. Sus sueños no volveran a ser iguales.", TipoMueble.Interior, 50, "bed", 63358);
-            create(m6);
-            muebles.add(m6);
-            Mueble m7 = new Mueble(7L, "Silla Neoclásica", "Una bella silla con un estilo neoclásico", TipoMueble.Exterior, 65, "neoClasica", 678);
-            create(m7);
-            muebles.add(m7);
-            Mueble m8 = new Mueble(8L, "Camarote junior", "Con diseño moderno. Sus hijos ahora podrán tener unos felices sueños.", TipoMueble.Interior, 85, "camarote", 56565);
-            create(m8);
-            muebles.add(m8);
-
-            Random r = new Random();
-            for (int e = 0; e < 10; e++) {
-                //Genera un valor random para seleccionar el producto
-                int rndProducto = (int) (Math.random() * 8);
-                //Genera un valor random para seleccionar la cantidad 
-                int rndCantidad = (int) (Math.random() * 15) + 1;
-
-                RegistroVenta venta = new RegistroVenta();
-                venta.setCantidad(rndCantidad);
-                venta.setProducto(muebles.get(rndProducto));
-                //Genera un valor random para establecer una fecha
-                long ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 2 * 60 * 1000));
-                venta.setFechaVenta(new Date(ms));
-                //TODO: registro venta ciudad es entidad....!!!
-                venta.setCiudad("Bogotá");
-                venta.setComprador(usuario1);
-                create(venta);
-            }
-
-            for (int e = 0; e < 5; e++) {
-                //Genera un valor random para seleccionar el producto
-                int rndProducto = (int) (Math.random() * 8);
-                //Genera un valor random para seleccionar la cantidad 
-                int rndCantidad = (int) (Math.random() * 15) + 1;
-
-                RegistroVenta venta = new RegistroVenta();
-                venta.setCantidad(rndCantidad);
-                venta.setProducto(muebles.get(rndProducto));
-                //Genera un valor random para establecer una fecha
-                long ms = -946771200000L + (Math.abs(r.nextLong()) % (70L * 365 * 2 * 60 * 1000));
-                venta.setFechaVenta(new Date(ms));
-                //TODO: registro venta ciudad es entidad....!!!
-                venta.setCiudad("New York");
-                venta.setComprador(usuario2);
-                create(venta);
-            }
         }
+    }
+
+    private ArrayList<Mueble> crearMuebles() {
+        List listMuebles = findAll(Mueble.class);
+
+        //muebles = new ArrayList<Mueble>();
+        //Agrega los muebles del sistema
+        ArrayList<Mueble> muebles = new ArrayList();
+        Mueble m1 = new Mueble(1L, "Silla clásica", "Una confortable silla con estilo del siglo XIX.", TipoMueble.Interior, 45, "sillaClasica", 123);
+        create(m1);
+        muebles.add(m1);
+        Mueble m2 = new Mueble(2L, "Sillón new wave", "Innovador y cómodo. No existen mejores palabras para describir este hermoso sillón.", TipoMueble.Interior, 60, "newWave", 5655);
+        create(m2);
+        muebles.add(m2);
+        Mueble m3 = new Mueble(3L, "Silla moderna", "Lo último en la moda de interiores. Esta silla le brindará la comodidad e innovación que busca", TipoMueble.Interior, 50, "sillaModerna", 5464);
+        create(m3);
+        muebles.add(m3);
+        Mueble m4 = new Mueble(4L, "Mesa de jardín", "Una bella mesa para comidas y reuniones al aire libre.", TipoMueble.Exterior, 100, "mesaJardin", 4568);
+        create(m4);
+        muebles.add(m4);
+        Mueble m5 = new Mueble(5L, "Orange games", "Una hermosa silla con un toqué moderno y elegante. Excelente para su sala de estar", TipoMueble.Interior, 70, "sillaNaranja", 1345);
+        create(m5);
+        muebles.add(m5);
+        Mueble m6 = new Mueble(6L, "Cama king", "Una hermosa cama hecha en cedro para dos personas. Sus sueños no volveran a ser iguales.", TipoMueble.Interior, 50, "bed", 63358);
+        create(m6);
+        muebles.add(m6);
+        Mueble m7 = new Mueble(7L, "Silla Neoclásica", "Una bella silla con un estilo neoclásico", TipoMueble.Exterior, 65, "neoClasica", 678);
+        create(m7);
+        muebles.add(m7);
+        Mueble m8 = new Mueble(8L, "Camarote junior", "Con diseño moderno. Sus hijos ahora podrán tener unos felices sueños.", TipoMueble.Interior, 85, "camarote", 56565);
+        create(m8);
+        muebles.add(m8);
+        return muebles;
     }
 
     /**
@@ -306,10 +345,10 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
     }
 
     public List<Object[]> findByQuery(String sql, int cantidadResultados) {
-        
+
         Query query = em.createQuery(sql);
         query.setMaxResults(cantidadResultados);
         List<Object[]> results = query.getResultList();
         return results;
-    }    
+    }
 }

@@ -55,7 +55,7 @@ public class RegistroVenta implements Serializable {
     /**
      * Ciudad en la que se vendió el producto
      */
-    private String ciudad;
+    private Ciudad ciudad;
 
     /**
      * Usuario que compró el producto
@@ -86,7 +86,7 @@ public class RegistroVenta implements Serializable {
      * @param comprador Usuario que compro el mueble
      */
     public RegistroVenta(Date fechaVenta, Mueble producto, int cantidad,
-            String ciudad, Usuario comprador) {
+            Ciudad ciudad, Usuario comprador) {
         this.fechaVenta = fechaVenta;
         this.producto = producto;
         this.cantidad = cantidad;
@@ -156,7 +156,7 @@ public class RegistroVenta implements Serializable {
      *
      * @return ciudad Ciudad
      */
-    public String getCiudad() {
+    public Ciudad getCiudad() {
         return ciudad;
     }
 
@@ -165,7 +165,7 @@ public class RegistroVenta implements Serializable {
      *
      * @param ciudad Nueva ciudad
      */
-    public void setCiudad(String ciudad) {
+    public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
 
