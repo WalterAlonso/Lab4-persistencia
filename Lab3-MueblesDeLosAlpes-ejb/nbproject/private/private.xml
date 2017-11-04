@@ -3,19 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Vendedor.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/RegistroVenta.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoUsuario.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Profesion.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Ciudad.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/RegistroVentaPK.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoMueble.java</file>
             <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioPersistencia.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Mueble.java</file>
+            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/servicios/ServicioPaisesMock.java</file>
             <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Pais.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/Usuario.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/ExperienciaVendedor.java</file>
-            <file>file:/E:/Proyectos/cupidos/L4/clone/Lab4-persistencia/Lab3-MueblesDeLosAlpes-ejb/src/java/com/losalpes/entities/TipoDocumento.java</file>
         </group>
     </open-files>
 </project-private>

@@ -42,7 +42,10 @@ public class PaisBean implements Serializable {
 
     public List<Pais> getPaises() {
         paises = paisServices.getPaises();
-        
+        Pais p = new Pais();
+        p.setId(-1L);
+        p.setNombre("--Seleccione--");
+        paises.add(0, p);
         return paises;
     }
 

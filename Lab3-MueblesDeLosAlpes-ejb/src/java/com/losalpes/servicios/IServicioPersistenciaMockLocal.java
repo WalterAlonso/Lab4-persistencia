@@ -57,5 +57,5 @@ public interface IServicioPersistenciaMockLocal
      */
     public java.lang.Object findById(java.lang.Class c, java.lang.Object id);
     
-    public List<Object[]> findByQuery(String sql);
+    public List<Object[]> findByQuery(String sql, int cantidadResultados);
 }
