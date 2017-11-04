@@ -57,10 +57,7 @@ public class CarritoBean implements Serializable
      * Constructor sin argumentos de la clase
      */
     public CarritoBean()
-    {
-        //Incializa los servicios
-        carrito=new ServicioCarritoMock();
-        
+    {        
     }
 
     //-----------------------------------------------------------

@@ -18,6 +18,7 @@ import com.losalpes.entities.TipoDocumento;
 import com.losalpes.entities.TipoUsuario;
 import com.losalpes.entities.Usuario;
 import com.losalpes.excepciones.OperacionInvalidaException;
+import com.losalpes.servicios.IServicioPaisesMockLocal;
 import com.losalpes.servicios.IServicioRegistroMockLocal;
 import com.losalpes.servicios.ServicioRegistroMock;
 import java.io.Serializable;
@@ -45,6 +46,9 @@ public class RegistroBean implements Serializable {
      */
     @EJB
     private IServicioRegistroMockLocal usuarioServices;
+    
+    @EJB
+    private IServicioPaisesMockLocal paisesServices;
 
     /**
      * Mensaje utilizado para mostrar información importante al usuario.
@@ -90,8 +94,6 @@ public class RegistroBean implements Serializable {
      * Constructor sin argumentos de la clase
      */
     public RegistroBean() {
-
-        usuarioServices = new ServicioRegistroMock();
 
         paises = new ArrayList<Pais>();
         ciudades = new ArrayList<Ciudad>();

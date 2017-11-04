@@ -19,6 +19,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -62,8 +63,8 @@ public class RegistroVenta implements Serializable {
      */
     //@JoinColumn(name="IdUsuario",referencedColumnName="login")
     @Id
-    @OneToOne()
-    @JoinColumn(name = "IdUsuario", referencedColumnName = "login")
+    @ManyToOne
+    //@JoinColumn(name = "IdUsuario", referencedColumnName = "login")
     private Usuario comprador;
 
     //-----------------------------------------------------------
