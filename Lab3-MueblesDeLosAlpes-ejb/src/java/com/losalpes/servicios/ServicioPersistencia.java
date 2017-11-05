@@ -344,6 +344,7 @@ public class ServicioPersistencia implements IServicioPersistenciaMockLocal, ISe
         return em.find(c, id);
     }
 
+    @Override
     public List<Object[]> findByQuery(String sql, int cantidadResultados) {
 
         Query query = em.createQuery(sql);

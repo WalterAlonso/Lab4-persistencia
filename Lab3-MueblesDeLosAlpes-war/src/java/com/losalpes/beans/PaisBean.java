@@ -36,7 +36,6 @@ public class PaisBean implements Serializable {
      * Creates a new instance of PaisBean
      */
     public PaisBean() {
-        //paisServices = new ServicioPaisesMock();
         paises = new ArrayList<Pais>();
     }
 

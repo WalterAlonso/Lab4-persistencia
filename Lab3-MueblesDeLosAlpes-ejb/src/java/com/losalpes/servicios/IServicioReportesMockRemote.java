@@ -16,11 +16,28 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface IServicioReportesMockRemote {
+
     /**
      * Obtiene el top de clientes
+     *
      * @param idPais el id del pais
      * @param cantidad la cantidad de clientes a obtener.
      * @throws OperacionInvalidaException excepcion
      */
     public List<Object[]> consultarTopClientesDePais(Long idPais, int cantidad);
+
+    /**
+     * Obtiene el historial de compras de un usuario
+     *
+     * @param idUsuario el id del usuario
+     * @throws OperacionInvalidaException excepcion
+     */
+    public List<Object[]> consultarHistorialComprasDeUsuario(String idUsuario);
+
+    /**
+     * Obtiene el top de muebles
+     *
+     * @throws OperacionInvalidaException excepcion
+     */
+    public List<Object[]> consultarTopMuebles();
 }

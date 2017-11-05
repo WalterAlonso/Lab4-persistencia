@@ -25,5 +25,18 @@ public interface IServicioReportesMockLocal {
      * @throws OperacionInvalidaException excepcion
      */
     public  List<Object[]>  consultarTopClientesDePais(Long idPais, int cantidad);
+    
+    /**
+     * Obtiene el historial de compras de un usuario
+     * @param idUsuario el id del usuario
+     * @throws OperacionInvalidaException excepcion
+     */
+    public  List<Object[]>  consultarHistorialComprasDeUsuario(String idUsuario);
 
+    /**
+     * Obtiene el top de muebles
+     *
+     * @throws OperacionInvalidaException excepcion
+     */
+    public List<Object[]> consultarTopMuebles();
 }
